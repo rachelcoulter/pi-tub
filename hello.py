@@ -17,13 +17,13 @@ def hello_world():
     # setupGPIO()
     if request.method == 'POST':
         print("I am posting!")
-        data = request.form
+        circulation_pump = request.form.get('circulation_pump')
         # if data == 'On':
         #     GPIO.output(18, GPIO.HIGH)
         # else:
         #     GPIO.output(18, GPIO.LOW)
 
-        print("GPIO is {}".format(data))
+        print("Circulation Pump is {}".format(circulation_pump))
     if request.method == 'GET':
         print("I am getting!!")
 
