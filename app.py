@@ -17,10 +17,13 @@ def hello_world():
     # setupGPIO()
     if request.method == 'POST':
         print("I am posting!")
+        # print initial pin status before evaluating and changing
         circulation_pump = request.form.get('circulation_pump')
-        # if data == 'On':
+        if circulation_pump == 'On':
+            print("I am on!")
         #     GPIO.output(18, GPIO.HIGH)
-        # else:
+        else:
+            print("I am on!")
         #     GPIO.output(18, GPIO.LOW)
 
         print("Circulation Pump is {}".format(circulation_pump))
