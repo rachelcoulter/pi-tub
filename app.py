@@ -3,16 +3,16 @@
 from flask import Flask, render_template
 from flask import request
 
-
 app = Flask(__name__)
 
-#def setupGPIO():
-    # GPIO.setmode(GPIO.BCM)
-    # GPIO.setwarnings(False)
-    #
-    # GPIO.setup(18, GPIO.OUT)
 
-@app.route('/', methods = ['GET', 'POST'])
+# def setupGPIO():
+# GPIO.setmode(GPIO.BCM)
+# GPIO.setwarnings(False)
+#
+# GPIO.setup(18, GPIO.OUT)
+
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     # setupGPIO()
     if request.method == 'POST':
