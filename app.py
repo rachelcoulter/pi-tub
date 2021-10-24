@@ -14,15 +14,12 @@ def hello_world():
     air_temperature = in_out.air_temp()
     print("The water temperature is {}".format(water_temperature))
 
-    # TODO: make the devices properties
-
-    print("The air temperature is {}".format(air_temperature))
-    circulation_pump = None
+    circulation_pump = request.form.get('circulation_pump')
     if request.method == 'POST':
         print("I am posting!")
         # print initial pin status before evaluating and changing
-        circulation_pump = request.form.get('circulation_pump')
-        if circulation_pump == 'On':
+        # circulation_pump = request.form.get('circulation_pump')
+        if circulation_pump == 'on':
             print("I am on!")
         #     GPIO.output(18, GPIO.HIGH)
         else:

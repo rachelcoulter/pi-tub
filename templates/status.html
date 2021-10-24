@@ -10,7 +10,11 @@
  <p>Water Temperature: {{water_temperature}}</p>
  <p>Air Temperature: {{air_temperature}}</p>
 <form method="post" name="update">
-    <input type="checkbox" name="circulation_pump" id="circulation_pump" value="{{circulation_pump}}"/>
+    {% if circulation_pump == None %}
+        <input type="checkbox" name="circulation_pump" id="circulation_pump" />
+    {% else %}
+        <input type="checkbox" name="circulation_pump" id="circulation_pump" checked="true"/>
+    {% endif %}
     <label for="circulation_pump"> Circulation Pump</label><br/>
     <input type="submit" value="update">
 </form>
