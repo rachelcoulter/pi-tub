@@ -15,19 +15,21 @@ def hello_world():
     print("The water temperature is {}".format(water_temperature))
 
     circulation_pump = request.form.get('circulation_pump')
+    jet_pump_one = request.form.get('jet_pump_one')
     if request.method == 'POST':
         print("I am posting!")
         # print initial pin status before evaluating and changing
         # circulation_pump = request.form.get('circulation_pump')
-        if circulation_pump == 'on':
-            print("I am on!")
+        if jet_pump_one == 'on':
+            print("jet_pump_one is on!")
         #     GPIO.output(18, GPIO.HIGH)
         else:
-            print("I am off!")
+            print("jet_pump_one is off!")
         #     GPIO.output(18, GPIO.LOW)
 
         print("Circulation Pump is {}".format(circulation_pump))
+        print("Jet Pump One is {}".format(jet_pump_one))
     if request.method == 'GET':
         print("I am getting!!")
 
-    return render_template("status.html", water_temperature=water_temperature, air_temperature=air_temperature, circulation_pump=circulation_pump)
+    return render_template("status.html", water_temperature=water_temperature, air_temperature=air_temperature, circulation_pump=circulation_pump, jet_pump_one=jet_pump_one)

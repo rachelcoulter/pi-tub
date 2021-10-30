@@ -81,6 +81,16 @@ input:checked + .slider:before {
         <span class="slider round"></span>
     </label>
     <label for="circulation_pump"> Circulation Pump</label><br/>
+    
+    <label class="switch">
+    {% if jet_pump_one == None %}
+        <input type="checkbox" name="jet_pump_one" id="jet_pump_one" />
+    {% else %}
+        <input type="checkbox" name="jet_pump_one" id="jet_pump_one" checked="true"/>
+    {% endif %}
+        <span class="slider round"></span>
+    </label>
+    <label for="jet_pump_one"> Jet Pump One</label><br/>
     <input type="submit" value="update">
 </form>
 
